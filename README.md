@@ -1,1 +1,0 @@
-javascript-based-application-course
