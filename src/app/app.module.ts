@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-
 import { AppComponent } from './app.component';
 import { SongsComponent } from './songs/songs.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,19 +11,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {MaterialModule} from './material.module';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SongsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    WelcomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MatToolbarModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule
