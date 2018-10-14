@@ -4,22 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SongsComponent } from './songs/songs.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {FlexLayoutModule} from '@angular/flex-layout';
-
-import {MaterialModule} from './material.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MaterialModule} from './material.module';
+import {AppRouters} from './app.routes';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SongsComponent,
-    HeaderComponent,
-    FooterComponent,
     WelcomeComponent,
     DashboardComponent
   ],
@@ -29,6 +25,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpModule,
     BrowserAnimationsModule,
     MaterialModule,
+    AppRouters,
     FlexLayoutModule
   ],
   providers: [],
