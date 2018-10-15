@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>{{data}}</h1>
+<div mat-dialog-content>
+  <form class="example-form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Title" type="text" required [(ngModel)]="song.title" name="name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select matInput placeholder="Genre" required [(ngModel)]="song.genre" name="genre">
+          <mat-option *ngFor="let gen of genres" [value]="gen.value">
+            {{ gen.viewValue }}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Artist" type="text" required [(ngModel)]="song.artist" name="artist">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Album" type="text" required [(ngModel)]="song.album" name="album">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Key" type="text" required [(ngModel)]="song.key" name="key">
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">Save</button>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button class="close" (click)="onNoClick()" color="warn">Cancel</button>
+</div>
