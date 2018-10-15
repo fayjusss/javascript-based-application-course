@@ -1,18 +1,19 @@
 import {Injectable} from '@angular/core';
 import {Song} from '../Song';
 import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+import {of} from 'rxjs';
+
 
 @Injectable()
 export class DataService {
 
   ELEMENT_DATA: Song[] = [
-    {title: 'Let It Be', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
-    {title: 'Blackbird', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
-    {title: 'Something', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
-    {title: 'Hey Jude', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
-    {title: 'Yesterday', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
-    {title: 'I Want to Hold Your Hand', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
+    {position: 0, title: 'Let It Be', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
+    {position: 1, title: 'Blackbird', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
+    {position: 2, title: 'Something', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
+    {position: 3, title: 'Hey Jude', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
+    {position: 4, title: 'Yesterday', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
+    {position: 5, title: 'Michelle', genre: 'Rock', artist: 'Beatles', album: 'Rubber Band', key: 'G', date_posted: new Date()},
   ];
   genres = [
     {value: 'Rock', viewValue: 'Rock'},
@@ -24,7 +25,7 @@ export class DataService {
   }
 
   getData(): Observable<Song[]> {
-    return Observable.of<Song[]>(this.ELEMENT_DATA);
+    return of<Song[]>(this.ELEMENT_DATA);
   }
 
   getGenres() {
