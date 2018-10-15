@@ -5,4 +5,5 @@ export interface Song {
     album: string;
     key: string;
     date_posted: Date;
+    position: Number;
 }
