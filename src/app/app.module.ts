@@ -12,6 +12,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MaterialModule} from './material.module';
 import {AppRouters} from './app.routes';
 
+import {DataService} from './data/data.service';
+import {AuthService} from './auth.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import {AppRouters} from './app.routes';
     AppRouters,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [DataService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
