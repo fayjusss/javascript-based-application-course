@@ -4,6 +4,8 @@ import {AuthService} from '../auth.service';
 import {Song} from '../Song';
 import {DataSource} from '@angular/cdk/table';
 import {Observable} from 'rxjs/Observable';
+import {SongDialogComponent} from '../song-dialog/song-dialog.component';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +13,7 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(private dataService: DataService, public auth: AuthService) {
+  constructor(private dataService: DataService, public dialog: MatDialog, public auth: AuthService) {
   }
 
   displayedColumns = ['title', 'genre', 'artist', 'album', 'key', 'date_posted', 'delete'];
@@ -19,11 +21,22 @@ export class DashboardComponent {
 
   deletePost(id) {
     if (this.auth.isAuthenticated()) {
-      this.dataService.deletePost(id);
+      this.dataService.deleteSong(id);
       this.dataSource = new SongDataSource(this.dataService);
     } else {
       alert('Login in Before');
     }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(SongDialogComponent, {
+      width: '600px',
+      data: 'Add Post'
+    });
+    dialogRef.componentInstance.event.subscribe((result) => {
+      this.dataService.addSong(result.data);
+      this.dataSource = new SongDataSource(this.dataService);
+    });
   }
 }
 

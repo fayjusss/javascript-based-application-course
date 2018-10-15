@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {SongDialogComponent} from './song-dialog/song-dialog.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -19,7 +20,11 @@ import {AuthService} from './auth.service';
   declarations: [
     AppComponent,
     WelcomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    SongDialogComponent
+  ],
+  entryComponents: [
+    SongDialogComponent
   ],
   imports: [
     BrowserModule,

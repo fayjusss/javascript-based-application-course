@@ -32,11 +32,11 @@ export class DataService {
     return this.genres;
   }
 
-  addPost(data) {
+  addSong(data) {
     this.ELEMENT_DATA.push(data);
   }
 
-  deletePost(index) {
+  deleteSong(index) {
     this.ELEMENT_DATA = [...this.ELEMENT_DATA.slice(0, index), ...this.ELEMENT_DATA.slice(index + 1)];
   }
 
