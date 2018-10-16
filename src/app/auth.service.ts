@@ -13,7 +13,7 @@ export class AuthService {
         clientID: 'BRlHmdDzuX3rCtGZtSp2O3fqg4KU1Lgo',
         domain: 'fayjusss.eu.auth0.com',
         responseType: 'token id_token',
-        redirectUri: 'http://localhost:4200/',
+        redirectUri: 'https://jsba-final-project.herokuapp.com/',
         scope: 'openid'
     });
 
